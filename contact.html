@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tech Start, Store and Save Contact Page</title>
+    <link rel="stylesheet" href="style.css" />
+      </head>
+  </head>
+</html>
+<body>
+  <header>
+    <div class="topnav">
+      <a href="./index.html">Home</a>
+      <a class="active" href="./contact.html">Contact</a>
+    </div>
+    >
+    <h1>Tech Start, Stock and Save</h1>
+    <img src="images/logo.jpg" alt="logo" width="100" height="120" />
+    <p class="description">The one stop shop for all your tech needs.</p>
+    <h1>Contact us!</h1>
+    <h2>Send us your contact information.</h2>
+  </header>
+  <form class="contact" action=" https://httpbin.org/post" method="post">
+    <label for="firstname"><span class = "tc"></span>First Name</label> <br>
+    <input type="text" class = "fc" autocomplete ="f-name" name="firstname" required size="50px"><br>
+
+    <label for="firstname"><span class = "tc"></span>Last Name</label><br>
+    <input type="text" class = "fc" autocomplete ="l-name" name="firstname" required size="50px"> <br>
+
+    <label for="email"><span class = "tc"></span>Email</label> <br>
+    <input id="email" type="email" class = "fc" autocomplete ="email_in" name="email" size= "50px" required><br>
+
+    <label for="address"><span class = "tc"></span>Address</label> <br>
+    <input type="text" name="address" class = "fc" autocomplete="address_in"  required size= "50px"><br>
+
+    <div class="col form-group">
+      <label for="city"><span class = "tc"></span>City</label> <br>
+      <select class = "fc" name="city" autocomplete="city_in">
+        <option>Toronto</option>
+        <option>Montreal</option>
+        <option>Calgary</option>
+        <option>Ottawa</option>
+        <option>Edmonton</option>
+        <option>Mississauga</option>
+        <option>Winnipeg</option>
+        <option>Vancouver</option>
+        <option>Brampton</option>
+      </select>
+      <br>
+
+    <label for="province"><span class = "tc"></span>Province</label> <br>
+    <select class = "fc" name="province" autocomplete="prov_in"> <br>
+      <option>Ontario</option>
+      <option>Quebec</option>
+      <option>Alberta</option>
+      <option>Manitoba</option>
+      <option>New Brunswick</option>
+      <option>Northwest Territories</option>
+      <option>Nunavut</option>
+      <option>Yukon</option>
+      <option>British Columbia</option>
+      <option>PEI</option>
+      <option>Saskatchewan</option>
+      <option>Nova Scotia</option>
+    </select>
+    <br>
+    <div  class="row" id = "radiobutton">
+      <input  type="radio" id = "radioQuestion" name="radio" checked onclick="javascript:radioBtn();">
+      <label  for="Question">Question</label> <br>
+
+      <input type="radio" id = "radioComment" name="radio" onclick="javascript:radioBtn();">
+      <label  for="Comment">Comment</label> <br>
+
+      <input id = "problem" type="radio" name="radio" onclick="javascript:radioBtn();">
+      <label  for="problem">Order Problem</label> <br>
+
+      <input id = "orderNumber" type="text" name="ordernumber" style="width: 340px;" placeholder="Enter order number" pattern="[0-9]{8,9}">
+
+    </div>
+    <div class="row">
+      <label for="message">Message</label> <br>
+      <textarea name="message" rows="20" cols="50" class = "form-control"></textarea>
+
+    </div>
+    <div class="row">
+      <button id = "btn-contact" name="button" type="submit" >Submit</button>
+    </div>
+    </form>
+    <script type="text/javascript">
+    window.onload = function(){
+    document.getElementById("orderNumber").style.display = 'none';
+  }
+    function radioBtn(){
+      if (document.getElementById("problem").checked){
+        document.getElementById("orderNumber").style.display = 'block';
+      }else if (document.getElementById("radioComment").checked || document.getElementById("radioQuestion").checked ){
+        document.getElementById("orderNumber").style.display = 'none';
+      }
+      else{
+        document.getElementById("orderNumber").style.display = 'none';
+      }
+    }
+  </script>
+      <label for="postal-code"><span class = "tc"></span>Postal Code</label> <br>
+      <input type="text" name="postal-code" pattern="^[A-Za-z]\d[A-Za-z][ -]\d[A-Za-z]\d$" class = "fc" autocomplete="post" placeholder="A0A 1B1" required><br>
+      Please enter a valid Postal Code <br> <br>
+
+      <label for="message">Your message to us!</label> <br>
+      <textarea name="message" rows="8" class = "form-control" cols="100"></textarea> <br>
+
+      <button id = "btn-contact" name="button" type="submit" >Submit</button>
+    </form>
+
+    <div class="footer">
+      <!--Closing footer with social media links-->
+      <div class="footer_text">
+        <p class="social_media_link">Tech Start, Stock and Save</p>
+        <p class="social_media_link">Follow us at these Social Media Links!</p>
+        <img src="images/facebook.png" alt="facebook logo" width="25" height="25" class="s_pic" />
+        <p class="social_media_link">https://www.facebook.com/TSSS</p>
+        <img src="images/twitter.png" alt="twitter logo" width="25" height="25" class="s_pic" />
+        <p class="social_media_link">https://twitter.com/TSSS</p>
+      </div>
+
+      <form action="https://formspree.io/mnqgrgzj" method="POST" class="subscribe">
+        <label>
+          Your email:<br />
+          <input type="email" name="_replyto" size="70" />
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+</body>
